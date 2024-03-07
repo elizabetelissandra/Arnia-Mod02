@@ -4,7 +4,6 @@
 
 let repository = [];
 let idCount = 1;
-let dataAtual = new Date();
 
 const createCar = (modelo, cor, ano) => {
   const carro = {
@@ -32,11 +31,11 @@ function findCarById(id) {
 }
 
 // Exemplo de uso
-const carro4 = createCar("stepway", "cinza", 2019);
-const carro5 = createCar("Uno", "preta", 2018);
-const carro6 = createCar("Ka", "vermelho", 2020);
+// const carro4 = createCar("stepway", "cinza", 2019);
+// const carro5 = createCar("Uno", "preta", 2018);
+// const carro6 = createCar("Ka", "vermelho", 2020);
 
-const resultFindId1 = findCarById("1");
+// const resultFindId1 = findCarById("1");
 // console.log(resultFindId1);
 
 // Crie uma funçao que retorna todos os carros
@@ -77,20 +76,24 @@ function updateCarById(id, modelo, cor, ano) {
 }
 
 // Exemplo de uso
-const carro10 = createCar("stepway", "cinza", 2019);
-const carro11 = createCar("Uno", "preta", 2018);
-const carro12 = createCar("Ka", "vermelho", 2020);
+// const carro10 = createCar("stepway", "cinza", 2019);
+// const carro11 = createCar("Uno", "preta", 2018);
+// const carro12 = createCar("Ka", "vermelho", 2020);
 
-const resultUpdate = updateCarById(2, "Sandero", "Preto", 2015);
-console.log(resultUpdate);
+// const resultUpdate = updateCarById(2, "Sandero", "Preto", 2015);
+// console.log(resultUpdate);
 // console.log(repository);
 
 // Crie uma funçao que remove um carro do repositorio
 // Parametros: id(string)
 function deleteCarById(id) {
 
-  repository.filter(carro => carro.id !== id);
+  const index = repository.findIndex(carro => carro.id == id);
+  if (index < 0){
+  return "Carro não encontrado"
+  }
+  repository.splice(index, 1);
 }
-const  resultDelete = deleteCarById(3);
+const  resultDelete = deleteCarById(1);
 console.log(repository);
 
