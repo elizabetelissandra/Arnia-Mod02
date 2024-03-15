@@ -1,6 +1,7 @@
 const { MongoClient} =  require('mongodb')
+const url = require('./mongoURL')
 
-const client = new MongoClient('mongodb+srv://elizabetelissandrasilva:admin@cluster0.umywj9z.mongodb.net/')
+const client = new MongoClient(url)
 
 const bookCollection = client.db("cluster0").collection("books")
 

@@ -1,6 +1,7 @@
 const mongodb = require('mongodb')
+const url = require('./mongoURL')
 
-const client = mongodb.MongoClient('mongodb+srv://elizabetelissandrasilva:admin@cluster0.umywj9z.mongodb.net/')
+const client = mongodb.MongoClient(url)
 //cluster -> grupo de collections
 const cluster0 = client.db('cluster0');
 //collections -> array 
