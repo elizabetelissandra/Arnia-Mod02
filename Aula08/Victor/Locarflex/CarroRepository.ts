@@ -23,7 +23,7 @@ export class CarRepository {
   //- Deve ser possível listar os carros disponíveis
   async carrosDisponiveis(status: "alugado"|"disponivel") {
     const response = await carCollection
-      .find({ status: { $regex: "^" + status + "$", $options: "i" } }).toArray();
+      .find({ status: status }).toArray();
     console.log(response);
     client.close();
   }
