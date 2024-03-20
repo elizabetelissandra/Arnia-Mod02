@@ -3,11 +3,11 @@ import { client, entregaCollectionn } from "./database";
 import { Entrega, IEntrega } from "./Entregas";
 
 
-class EntregaRepository{
+export class EntregaRepository{
 
    //Deve ser capaz de criar um pedido, passando as informações: nome do produto, endereço do comprador, nome do comprador.
 
-    async create(entrega:IEntrega){
+    async criar(entrega:IEntrega){
         const newEntrega = new Entrega(entrega);
         const response = await entregaCollectionn.insertOne(newEntrega);
         console.log(response)
@@ -26,7 +26,7 @@ class EntregaRepository{
         client.close()
     }
 
-    async listAll(){
+    async listarTodos(){
         const findResult = await entregaCollectionn.find({}).toArray();
         console.log('Found documents =>', findResult);
         client.close()

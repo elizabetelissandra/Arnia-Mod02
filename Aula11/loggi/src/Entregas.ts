@@ -2,7 +2,7 @@ export interface IEntrega{
     nomeProduto:string;
     endereco: string,
     nomeComprador: string,
-    dataPedido: string,
+    dataPedido: string
     pedidoEntregue: boolean
 }
 
@@ -10,7 +10,7 @@ export class Entrega implements IEntrega{
     nomeProduto:string;
     endereco: string;
     nomeComprador: string;
-    dataPedido: string;
+    dataPedido: string
     pedidoEntregue: boolean
 
     constructor(entrega: IEntrega){
