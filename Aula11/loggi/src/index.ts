@@ -23,11 +23,13 @@ app.get("/users", (req, res) => {
 
 app.post( "/users", ( req, res )=>{
     const users = entregaRepository.criar(req.body as IEntrega)
+    entregaRepository.listarTodos()
     return res.json(users)
 })
 
 app.patch("/users", (req, res) =>{
-    const users = entregaRepository.atualizarPedido(new ObjectId(req.body._id), req.body)
+    const users = entregaRepository.atualizarPedido(new ObjectId("65fb45f62ecd78e408a02ed2"), true)
+    entregaRepository.listarTodos()
     return res.json(users)
 })
     

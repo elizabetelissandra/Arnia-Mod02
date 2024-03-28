@@ -15,7 +15,7 @@ export class EntregaRepository{
     };
 
     async buscarNaoEntregues(pedidoEntregue: boolean){
-        const response = await  entregaCollectionn.find({ pedidoEntregue} ).toArray() ; 
+        const response = await  entregaCollectionn.find({ pedidoEntregue}).toArray() ; 
         console.log(response)
         client.close()
     }
