@@ -26,4 +26,12 @@ export class PostRepository {
       }
     );
   }
+
+  async listAllPostByAuthor(author: string) {
+    return await this.postCollection.find({ author: author }).toArray();
+  }
+
+  async deletePostById(id: string) {
+    return await this.postCollection.deleteOne({ _id: new ObjectId(id) });
+  }
 }

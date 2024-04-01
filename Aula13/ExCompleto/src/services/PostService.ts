@@ -31,4 +31,14 @@ export class PostService{
         }
         return post
     }
+    async listAllPostByAuthor(author: string){
+        return (await this.postRepository.listAllPostByAuthor(author)).map((post) =>({
+            
+            ...post,
+            _id: post._id.toString()
+        }))
+    }
+    async deletePostById(id: string){
+        return await this.postRepository.deletePostById(id)
+        }
 }
